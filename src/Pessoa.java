@@ -14,35 +14,38 @@ public class Pessoa {
         this.pai = pai;
     }
 
-    public void mesmaPessoa(Pessoa p1, Pessoa p2){
-        if (p1.nome.equals(p2.nome) & p1.mae.equals(p2.mae)){
+    public void mesmaPessoa(Pessoa p1, Pessoa p2) {
+        if (p1.nome.equals(p2.nome) & p1.mae.equals(p2.mae)) {
             System.out.println("As pessoas são as mesmas!");
-        }
-        else{
+        } else {
             System.out.println("Não são as mesmas pessoas!");
         }
     }
 
-    public void saoIrmao(Pessoa p1, Pessoa p2){
-        if(p1.mae.equals(p2.mae) & p1.pai.equals(p2.pai)){
+    public void saoIrmao(Pessoa p1, Pessoa p2) {
+        if (p1.mae.equals(p2.mae) & p1.pai.equals(p2.pai)) {
             System.out.println("Essas 2 pessoas são irmãos(ãns)");
-        }
-        else{
+        } else {
             System.out.println("Não são irmãos(ãns)");
         }
     }
 
-    public void eAntecessor(Pessoa p){
-        if (p.mae != null & p.pai != null){
-            if (p.mae.equals(this.mae) || (p.pai.equals(this.pai))){
-
-            }
+    public void verificaAntecessor(Pessoa p) {
+        Pessoa primeiraPessoa = p;
+        if (this.mae.nome.equals(p.nome) || this.pai.nome.equals(p.nome)) {
+            System.out.println("É ANTECESSOR");
+        } else if ((this.mae.mae != null && this.mae.mae.nome.equals(p.nome))) {
+            verificaAntecessor(this.mae.mae);
+        } else if (this.mae.pai != null && this.mae.pai.nome.equals(p.nome)) {
+            verificaAntecessor(this.mae.pai);
+        } else if (this.pai.mae != null && this.pai.mae.nome.equals(p.nome)) {
+            verificaAntecessor(this.pai.mae);
+        } else if (this.pai.pai != null && this.pai.pai.nome.equals(p.nome))
+        {
+            verificaAntecessor(this.pai.pai);
+        } else {
+            System.out.println("CU");
         }
-
-
-
-
-
 
 
     }

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,7 +15,7 @@ public class Main {
         Pessoa p8 = new Pessoa("Nícolas", p5, p4);
 
 
-        p0.eAntecessor(p8);
+        p6.verificaAntecessor(p1);
 
 
 
