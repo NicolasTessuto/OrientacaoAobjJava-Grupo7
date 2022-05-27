@@ -4,6 +4,7 @@ public class Main {
         /*INSTANCIANDO PESSOAS APENAS COM O NOME*/
         Pessoa p0 = new Pessoa("Salvador");
         Pessoa p1 = new Pessoa("Conceição");
+
         Pessoa p2 = new Pessoa("Neusa");
         Pessoa p3 = new Pessoa("Eládio");
 
@@ -13,7 +14,6 @@ public class Main {
         Pessoa p6 = new Pessoa("Nícolas",p5, p4);
         Pessoa p7 = new Pessoa("Fernanda", p5, p4);
         Pessoa p8 = new Pessoa("Nícolas", p5, p4);
-
 
         p6.verificaAntecessor(p1);
 

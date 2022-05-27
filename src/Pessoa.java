@@ -44,7 +44,7 @@ public class Pessoa {
         {
             verificaAntecessor(this.pai.pai);
         } else {
-            System.out.println("CU");
+            System.out.println("saiu");
         }
 
 
