@@ -30,23 +30,18 @@ public class Pessoa {
         }
     }
 
-    public void verificaAntecessor(Pessoa p) {
-        Pessoa primeiraPessoa = p;
-        if (this.mae.nome.equals(p.nome) || this.pai.nome.equals(p.nome)) {
-            System.out.println("É ANTECESSOR");
-        } else if ((this.mae.mae != null && this.mae.mae.nome.equals(p.nome))) {
-            verificaAntecessor(this.mae.mae);
-        } else if (this.mae.pai != null && this.mae.pai.nome.equals(p.nome)) {
-            verificaAntecessor(this.mae.pai);
-        } else if (this.pai.mae != null && this.pai.mae.nome.equals(p.nome)) {
-            verificaAntecessor(this.pai.mae);
-        } else if (this.pai.pai != null && this.pai.pai.nome.equals(p.nome))
-        {
-            verificaAntecessor(this.pai.pai);
-        } else {
-            System.out.println("saiu");
+    public boolean verificaAntecessor(Pessoa possivelParente, String nomeDoParente) {
+        if (possivelParente == null) {
+            return false;
         }
-
-
+        if (possivelParente.nome.equals(nomeDoParente)) {
+            return true;
+        }
+        boolean ehAntecessor = verificaAntecessor(possivelParente.mae, nomeDoParente);
+        if (ehAntecessor) {
+            return ehAntecessor;
+        }
+        ehAntecessor = verificaAntecessor(possivelParente.pai, nomeDoParente);
+        return ehAntecessor;
     }
 }

@@ -15,8 +15,12 @@ public class Main {
         Pessoa p7 = new Pessoa("Fernanda", p5, p4);
         Pessoa p8 = new Pessoa("Nícolas", p5, p4);
 
-        p6.verificaAntecessor(p1);
 
+
+        p6.mesmaPessoa(p6, p8);
+        p6.saoIrmao(p7,p6);
+
+        System.out.println(p6.verificaAntecessor(p6, "Salvador"));
 
 
 
